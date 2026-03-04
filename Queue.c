@@ -4,7 +4,12 @@ int queue[N];
 int front = -1;
 int rear = -1;
 
-void enqueue(int a){
+void enqueue(){
+    int a;
+
+    printf("Enter data to insert: ");
+    scanf("%d", &a);
+
     if(rear == N - 1){
         printf("Overflow!\n");
         return;
@@ -40,7 +45,7 @@ void display(){
         return;
     }
     else{
-        printf("Items in Queue:\n");
+        printf("\nItems in Queue:\n");
         for(int i = front; i <= rear; i++){
             printf("%d\n", queue[i]);
         }
@@ -57,19 +62,51 @@ void peek(){
     }
 }
 
-void main(){
-    int choice = 0;
+void invalidInput(int choice){
+    printf("Invalid choice!\n Enter your choice: ");
+    scanf("%d", &choice);
+}
 
+int main(){
+    int choice = 0;
+    int exit;
+
+    while (exit != 5){
     printf("\n-----THE QUEUE-----\n");
     printf("1) Enqueue.\n");
     printf("2) Dequeue.\n");
     printf("3) Display.\n");
     printf("4) Peek.\n");
+    printf("5) Exit.\n");
     printf("\nEnter your choice: ");
     scanf("%d", &choice);
 
+
     if (choice > 4 && choice < 1){
-        printf("Invalid choice!\n Enter your choice: ");
-        scanf("%d", &choice);
+        invalidInput(choice);
     }
+
+    switch(choice){
+        case 1:
+            enqueue();
+            break;
+        case 2:
+            dequeue();
+            break;
+        case 3:
+            display();
+            break;
+        case 4:
+            peek();
+            break;
+        case 5:
+            return 1;
+            break;
+        default:
+            invalidInput(choice);
+    }
+}
+
+    return 0;
+
 }
