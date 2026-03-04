@@ -58,12 +58,18 @@ void peek(){
 }
 
 void main(){
-    enqueue(2);
-    enqueue(5);
-    enqueue(-8);
-    display();
-    peek();
-    dequeue();
-    peek();
-    display();
+    int choice = 0;
+
+    printf("\n-----THE QUEUE-----\n");
+    printf("1) Enqueue.\n");
+    printf("2) Dequeue.\n");
+    printf("3) Display.\n");
+    printf("4) Peek.\n");
+    printf("\nEnter your choice: ");
+    scanf("%d", &choice);
+
+    if (choice > 4 && choice < 1){
+        printf("Invalid choice!\n Enter your choice: ");
+        scanf("%d", &choice);
+    }
 }
