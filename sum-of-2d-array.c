@@ -1,15 +1,13 @@
 #include <stdio.h>
 
 int main(){
-    int first[3][3] = {{1, 2, 3},
+    int first[3][3] = {{1, 2, 3}, // first 2d array
                       {4, 5, 6},
                       {7, 8, 9}};
 
-    int sec[3][3] = {{5, 6, 7},
+    int sec[3][3] = {{5, 6, 7}, // seconde 2d array
                      {1, 2, 3},
                      {9, 8, 7}};
-
-    printf("\nMd Farhan Mushtaque\n\n");
 
     printf("First array\n");
 
