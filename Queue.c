@@ -77,12 +77,6 @@ void peek()
     }
 }
 
-void invalidInput(int choice)
-{
-    printf("Invalid choice!\n Enter your choice: ");
-    scanf("%d", &choice);
-}
-
 int main()
 {
     int choice = 0;
@@ -98,11 +92,6 @@ int main()
         printf("5) Exit.\n");
         printf("\nEnter your choice: ");
         scanf("%d", &choice);
-
-        if (choice > 4 && choice < 1)
-        {
-            invalidInput(choice);
-        }
 
         switch (choice)
         {
@@ -122,7 +111,7 @@ int main()
             return 1;
             break;
         default:
-            invalidInput(choice);
+            break;
         }
     }
 
